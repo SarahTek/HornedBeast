@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 class Hornebeast extends React.Component {
   render(){
     return(
