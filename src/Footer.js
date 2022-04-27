@@ -3,7 +3,7 @@ class Footer extends React.Component {
   render(){
     return(
       <>
-      <p>Author by: Sarah Teklemariam</p>
+      <p>{this.props.text}</p>
       </>
     )
   }
