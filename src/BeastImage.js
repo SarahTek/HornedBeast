@@ -1,12 +1,13 @@
 import React from 'react';
-import BeastImage from './BeastImage';
+import Image from 'react-bootstrap/Image'
+
 
 
 class BeastImage extends React.Component {
   render() {
     return (
       <>
-      <img src={this.props.image} alt="" />
+      <Image src={this.props.image} alt={"A unicorn and a narwhal nuzzling their horns"} horns={"1"} className="h-100"/>
   
       </>
     )
