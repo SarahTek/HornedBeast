@@ -4,7 +4,7 @@ class Hornebeast extends React.Component {
     return(
       <>
       <h2>{this.props.title}</h2>
-      <img src={this.props.src} alt={this.props.description}  title={this.props.title} />
+      <img src={this.props.src} alt={this.props.description}  title={this.props.title} horns= {this.props.horns}/>
       <p>{this.props.description}</p>
       </>
     )
