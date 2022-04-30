@@ -10,12 +10,8 @@ class App extends React.Component {
     return (
       <div className="App">
       <Header title={"Horned Beasts"}/>
-      <Main 
-       ImageUrls={ImageUrls} 
-       message= {"Click your fav Beast!"}
-       />
+      <Main ImageUrls={ImageUrls} message= {"Click your favBeast!"} />
       <Footer text={"Your vote matters!"}/>
-      
       </div>
     );
   }
