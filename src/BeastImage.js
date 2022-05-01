@@ -1,51 +1,44 @@
 import React from 'react';
 import Card from 'react-bootstrap/esm/Card';
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 class BeastImage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-     votes: 0
+      Votes: "💜"
     }
   }
-
-  handleClick = (event) => {
-    this.props.handleClick(event);
-  };
-  handleVotes = () => {
-    this.setState ({
-      votes:this.state.votes + 1,
-    });
-  
-    // if (this.state.status === "Yay!") {
-    //   this.setState({ status: "Nay!" });
-    // } else {
-    //   this.setState({ status: "Yay!" })
-    // }
+  handleClick = () => {
+    this.setState({ Votes: this.state.Votes + "💜" });
   }
 
-  
+
   render() {
     return (
-      <>
-        <Card style={{ width: '18rem' }} onClick={() =>this.handleclick(this.props)}>
-          <Card.Img src={this.props.image} alt={ this.props.description} title ={this.props.title} horns={this.props.horns} />
+      <Card id="beast" className='h-100 p-3 fw-bold'>
+        <Container>
+          <Card.Title className='fw-bold fs-3'>{this.props.title}</Card.Title>
+          <Card.Img
+            src={this.props.imageUrl}
+            alt={this.props.description}
+            title={this.props.title}
+
+          />
           <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>{this.state.votes}</Card.Text>
-            <Card.Text>This beast has {this.props.horns} horns</Card.Text>
-            <Button variant="primary">🖤{this.state.handleVotes}🖤</Button>
+            <Card.Text>{this.props.description}</Card.Text>
+            <Card.Text>Votes: {this.state.Votes}</Card.Text>
+            <Button onClick={this.handleClick}>Click Me!</Button>
           </Card.Body>
-        </Card>
-        {/* <Image src={this.props.image} alt={"A unicorn and a narwhal nuzzling their horns"} horns={"1"} className="Beastimage"
-          onclick={this.handleclick} />
-        <h2> {this.state.status} </h2> */}
-      </>
-    )
+        </Container>
+      </Card>
+    );
   }
 }
+
 
 export default BeastImage;

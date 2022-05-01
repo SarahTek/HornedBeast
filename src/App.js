@@ -4,15 +4,16 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import ImageUrls from './Data.json';
+import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <Container className="App">
       <Header title={"Horned Beasts"}/>
-      <Main ImageUrls={ImageUrls} message= {"Click your favBeast!"} />
+      <Main ImageUrls={ImageUrls}  />
       <Footer text={"Your vote matters!"}/>
-      </div>
+      </Container>
     );
   }
 }
