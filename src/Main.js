@@ -1,6 +1,5 @@
 import React from 'react';
  import BeastImage from './BeastImage';
-//  import Hornedbeast from './Hornedbeast';
 import { Row, Col } from 'react-bootstrap';
 
 class Main extends React.Component {
@@ -16,6 +15,7 @@ class Main extends React.Component {
                 title={image.title}
                 imageUrl={image.image_url}
                 description={image.description}
+                handleOpenModal={this.props.handleOpenModal}
               />
             </Col>
           ))}

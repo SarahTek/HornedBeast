@@ -31,8 +31,10 @@ class BeastImage extends React.Component {
           />
           <Card.Body>
             <Card.Text>{this.props.description}</Card.Text>
-            <Card.Text>Votes: {this.state.Votes}</Card.Text>
+            <Card.Text>Votes: {this.state.showModal}</Card.Text>
             <Button onClick={this.handleClick}>Click Me!</Button>
+            <Button onClick={() => this.props.handleOpenModal(this.props.title)}> Click for more details </Button>
+           
           </Card.Body>
         </Container>
       </Card>
