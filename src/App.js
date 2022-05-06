@@ -6,13 +6,15 @@ import Footer from './Footer';
 import ImageUrls from './Data.json';
 import Container from 'react-bootstrap/Container';
 import SelectedBeast from './SelectedBeast';
+import FilterForm from './FilterForm';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      selectedBeast: {}
+      selectedBeast: {},
+      ImageUrls: ImageUrls
     }
   }
   handleCloseModal = () => {
@@ -21,22 +23,34 @@ class App extends React.Component {
 
   handleOpenModal = (beastName) => {
     const selectedBeast = ImageUrls.find(beast => beast.title === beastName);
-    this.setState({ showModal: true , selectedBeast})
+    this.setState({ showModal: true, selectedBeast })
   };
-render(){
+  updatedFilterBeasts = (filterBeastArray) => {
+    this.setState({ ImageUrls: filterBeastArray });
+  }
 
-  return(
-    <Container className = "App" >
-      <Header title={"Horned Beasts"}/>
-      <Main 
-      ImageUrls={ImageUrls} 
-      handleOpenModal ={this.handleOpenModal}/>
-      <Footer text={"Your vote matters!"}/>
-      <SelectedBeast 
-       show={this.state.showModal}
-       handleClose= {this.handleCloseModal}
-       selectedBeast={this.state.selectedBeast}
-       />
+  numberOfHorns = (event) => {
+    event.preventDefault();
+    this.setState({ Horns: event.target.value });
+  }
+
+
+  render() {
+    return (
+      <Container className="App" >
+        <Header title={"Horned Beasts"} />
+        <FilterForm ImageUrls={ImageUrls} updatedFilterBeasts={this.updatedFilterBeasts} />
+        <Main
+          ImageUrls={this.state.ImageUrls}
+          handleOpenModal={this.handleOpenModal} />
+
+        <SelectedBeast
+          show={this.state.showModal}
+          handleClose={this.handleCloseModal}
+          selectedBeast={this.state.selectedBeast}
+        />
+        <Footer text={"Your vote matters!"} />
+
 
       </Container>
     );
