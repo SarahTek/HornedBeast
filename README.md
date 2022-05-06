@@ -57,3 +57,20 @@ Actual time needed to complete: 2:30 hour
 
 
 Collaborators: Martha and Natalija
+
+
+# Lab 04 Time Estimate
+## Feature 1. Filter by Numbers of Horns
+
+Number and name of feature: #1
+
+Estimate of time needed to complete:  1 hour
+
+Start time: 10:30
+
+Finish time: 01:15
+
+Actual time needed to complete: 2 hours and 45 min
+
+
+Collaborators: Martha and Natalija
