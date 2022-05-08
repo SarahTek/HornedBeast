@@ -1,4 +1,4 @@
-# Lab 02 Time Estimate
+# Lab 01 Time Estimate
 
 ## Feature #1: Display images
 
